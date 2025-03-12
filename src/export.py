@@ -29,7 +29,7 @@ import json
 import datetime
 
 # Load the JSON data
-json_file = "./data/meterData.json"
+json_file = "../data/meterData.json"
 output_file = "readings.dat"
 
 try:
