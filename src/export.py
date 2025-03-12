@@ -30,7 +30,7 @@ import datetime
 
 # Load the JSON data
 json_file = "../data/meterData.json"
-output_file = "readings.dat"
+output_file = "../output/readings.dat"
 
 try:
     with open(json_file, "r", encoding="utf-8") as file:
