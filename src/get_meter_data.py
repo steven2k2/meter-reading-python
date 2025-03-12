@@ -3,6 +3,7 @@ from pathlib import Path
 
 METER_DATA_FILE = Path("./data/meterData.json")
 
+
 def get_meter_data():
     """Reads and returns meter data in a structured server response."""
     try:
@@ -17,13 +18,16 @@ def get_meter_data():
         # Ensure 'meterData' exists and is a list to prevent unexpected errors
         meter_data = data.get("meterData", [])
         if not isinstance(meter_data, list):
-            return {"success": False, "message": "Invalid data format: 'meterData' should be a list"}
+            return {
+                "success": False,
+                "message": "Invalid data format: 'meterData' should be a list",
+            }
 
         # Return the formatted response
         return {
             "success": True,
             "total": len(meter_data),  # Number of records
-            "data": meter_data  # The actual meter data
+            "data": meter_data,  # The actual meter data
         }
     except json.JSONDecodeError:
         # Handle invalid JSON format errors

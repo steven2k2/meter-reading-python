@@ -5,9 +5,11 @@ from src.save_meter_data import save_meter_data  # Import save function
 
 app = FastAPI()
 
+
 @app.get("/")
 def home():
     return {"message": "FastAPI running"}
+
 
 @app.get("/meter-data")
 def meter_data_endpoint():
@@ -20,6 +22,7 @@ def meter_data_endpoint():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.post("/meter-readings")
 def save_meter_readings(data: List[Dict] = Body(...)):
     """Receives meter readings (single or bulk) and saves them."""
@@ -31,7 +34,7 @@ def save_meter_readings(data: List[Dict] = Body(...)):
             "success": response.get("success"),
             "message": response.get("message"),
             "total": len(data),
-            "data": response.get("data")
+            "data": response.get("data"),
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

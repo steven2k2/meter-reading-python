@@ -5,6 +5,7 @@ from datetime import datetime
 data_dir = Path("./data")
 data_dir.mkdir(exist_ok=True)  # Ensure the data directory exists
 
+
 def save_meter_data(data):
     """Saves the provided meter data to a timestamped JSON file."""
     try:
