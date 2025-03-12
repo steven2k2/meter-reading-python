@@ -23,9 +23,9 @@ meter-reading-python/
 ├── src/                   # Core Python scripts
 │   ├── meter_reader.py
 │   ├── export.py
-│   ├── json-to-lpf.py
-│   ├── lpf-to-json.py
-│   ├── lpf-to-mysql.py
+│   ├── json_to_lpf.py
+│   ├── lpf_to_json.py
+│   ├── lpf_to_mysql.py
 │   ├── utils.py
 ├── tests/                 # Unit tests
 ├── README.md              # Project documentation
@@ -37,13 +37,13 @@ meter-reading-python/
 ### `export.py`
 Converts meter reading data from `meterData.json` into a structured text file (`reading.dat`).
 
-### `json-to-lpf.py`
+### `json_to_lpf.py`
 Reads meter data from `meterData.json` and converts it into a **line-per-field** (LPF) format, simulating legacy COBOL system output.
 
-### `lpf-to-json.py`
+### `lpf_to_json.py`
 Reads LPF-formatted data and converts it back into structured JSON format.
 
-### `lpf-to-mysql.py`
+### `lpf_to_mysql.py`
 Reads an LPF-formatted file and generates an SQL script that:
 - Drops the existing database (if it exists).
 - Creates a new database and table.
